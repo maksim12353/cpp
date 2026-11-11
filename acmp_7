@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string a, b, c;
+    cin >> a >> b >> c;
+    int mx_size = max(a.size(), max(b.size(), c.size()));
+    while(a.size() < mx_size){
+        a.insert(a.begin(), '0');
+    }
+    while(b.size() < mx_size){
+        b.insert(b.begin(), '0');
+    }
+    while(c.size() < mx_size){
+        c.insert(c.begin(), '0');
+    }
+
+    //cout << a << '\n';
+    //cout << b << '\n';
+    //cout << c << '\n';
+    
+    if(a > b){
+        b = a;
+    }
+    if(b > c){
+        c = b;
+    }
+    
+    cout << c;
+
+    return 0;
+}
